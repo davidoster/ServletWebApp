@@ -18,14 +18,20 @@
             
         
         %>
-        <form name="form1" action="test.jsp" method="post" target="_blank">
+        <form name="form1" action="test2.jsp" method="POST" target="_blank">
             <label for="fname">First name:</label>
             <input type="text" id="fname" name="fname"><br><br>
             <label for="lname">Last name:</label>
             <input type="text" id="lname" name="lname"><br><br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" onclick="formSubmit()">
         </form>
-        
+        <script>
+            function formSubmit() {
+                
+            }
+            
+            
+        </script>
         <% 
             String fname;
             String lname;
@@ -37,7 +43,11 @@
             Customer customer = new Customer(fname,lname);
             // Database.saveCustomer(customer);
             System.out.println(customer);
-            out.print(customer);
+            if(customer.getFirstName() != null || customer.getFirstName() != "") {
+                out.print("<h2>" + customer + "</h2>");
+                out.print("<br>" + request.getParameter("fname"));
+            }
+            
             
         %>
         

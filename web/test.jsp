@@ -4,8 +4,10 @@
     Author     : mac
 --%>
 
+<%@page import="java.util.Date"%>
 <%@page import="models.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%! private int i; %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,10 +16,8 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <% 
-            
-        
-        %>
+        <%-- this is a comment --%>
+        <%= new Date() %>
         <form name="form1" action="test2.jsp" method="POST" target="_blank">
             <label for="fname">First name:</label>
             <input type="text" id="fname" name="fname"><br><br>
@@ -47,7 +47,8 @@
                 out.print("<h2>" + customer + "</h2>");
                 out.print("<br>" + request.getParameter("fname"));
             }
-            
+            i = 10;
+            out.print("i = " + i);
             
         %>
         

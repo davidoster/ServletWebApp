@@ -18,7 +18,7 @@
             
         
         %>
-        <form name="form1" action="test.jsp" method="post" target="_blank">
+        <form name="form1" action="test.jsp" method="POST" target="_blank">
             <label for="fname">First name:</label>
             <input type="text" id="fname" name="fname"><br><br>
             <label for="lname">Last name:</label>
@@ -37,7 +37,10 @@
             Customer customer = new Customer(fname,lname);
             // Database.saveCustomer(customer);
             System.out.println(customer);
-            out.print(customer);
+            if(customer != null) {
+                out.print("<h2>" + customer + "</h2>");
+            }
+            
             
         %>
         

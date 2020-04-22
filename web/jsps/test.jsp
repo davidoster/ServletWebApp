@@ -4,6 +4,8 @@
     Author     : mac
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Date"%>
 <%@page import="models.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -33,6 +35,7 @@
             
         </script>
         <% 
+            
             String fname;
             String lname;
             System.out.println("Context Path :" + request.getContextPath());
@@ -50,8 +53,26 @@
             i = 10;
             out.print("i = " + i);
             
+            List<String> strings = new ArrayList<>();
+            strings.add("sdfsfsdf");
+            strings.add("sdfsfsdf2");
+            strings.add("sdfsfsdf3");
+            strings.add("sdfsfsdf4");
+            strings.add("sdfsfsdf5");
+            out.print("<table>");
+            for (int i = 0; i < strings.size(); i++) {
+                String s = "<tr><td>" + strings.get(i) + "</td></tr>";
+                    out.print(s);
+                }
+            out.print("</table>");
+            
+            out.print("<form action='cityselection.jsp' method=\"GET\"><select multiple name='dl'>");
+            for (int i = 0; i < strings.size(); i++) {
+                String s = "<option>" + strings.get(i) + "</option>";
+                    out.print(s);
+                }
+            out.print("</select><button type='submit'>Submit</button></form>");
         %>
-        
         
     </body>
 </html>
